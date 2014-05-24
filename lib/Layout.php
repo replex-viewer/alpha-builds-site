@@ -93,7 +93,7 @@ class Layout
   {
   { ?>
        </div><!-- container -->
-       <div class="container">
+       <div class="container bborder">
         <table style="width: 100%; border: none; padding: 0;"><tr>
          <td class="bottom-links"><a href="http://www.replex.org/">Replex Main Site</a></td>
          <td class="bottom-links"><a href="http://www.replex.org/wp/about">About</a></td>

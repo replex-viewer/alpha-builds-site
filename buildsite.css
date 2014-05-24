@@ -43,8 +43,11 @@ div {
     padding: 5px;
     margin-bottom: 10px;
     background: url(images/container-bg.gif) top repeat-x;
-    border-bottom: solid 2px black;
     background-color: #1b1b1b;
+}
+
+.bborder {
+    border-bottom: solid 2px black;
 }
 
 a, a:link, a:hover, a:visited, a:active {
