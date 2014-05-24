@@ -23,7 +23,7 @@ function print_changeset($row)
             <tr>
               <td rowspan="2" style="text-align: center;"><img src="' . $avatar . '" alt="Avatar"/><br />' .
 				htmlspecialchars($author["name"]) . '</td>
-              <td><a href="https://github.com/singularity-viewer/SingularityViewer/commit/' . htmlspecialchars($row["hash"]) . '">' . htmlspecialchars($row["hash"]) . '</a></td>
+              <td><a href="https://github.com/replex-viewer/replex/commit/' . htmlspecialchars($row["hash"]) . '">' . htmlspecialchars($row["hash"]) . '</a></td>
               <td>' . htmlspecialchars($row["time"]). 
               ' (' . Layout::since(strtotime($row["time"])) . ' ago)</td>
            </tr>
@@ -84,7 +84,7 @@ Function print_build($current, $next, $buildNr, $chan)
 
 
 	$vspace = "";
-	$github = "https://github.com/singularity-viewer/SingularityViewer/";
+	$github = "https://github.com/replex-viewer/replex/";
 
 	if ($next) {
 		if (($current->linux_file && $current->osx_file && $current->linux64_file)) {
@@ -175,8 +175,7 @@ Layout::header();
 if (isset($_GET["chan"]) && isset($CHANS[$_GET["chan"]])) {
 	$chan = $_GET["chan"];
 } else {
-	// $chan = "SingularityMultiWearable";
-	$chan = "SingularityAlpha";
+	$chan = "ReplexAlpha";
 }
 
 $page = 0;
@@ -206,19 +205,19 @@ if ($res = $DB->query(kl_str_sql("select * from builds where chan=!s $where orde
 		$DB->loadFromDbRow($build, $res, $row);
 
 		$file = "{$chan}_" . str_replace(".", "-", $build->version) . "_Setup.exe";
-		$build->file = file_exists($file) ? $file : false;
+		$build->file = file_exists("builds/" . $file) ? $file : false;
 
 		$win64_file = "{$chan}_" . str_replace(".", "-", $build->version) . "_x86-64_Setup.exe";
-		$build->win64_file = file_exists($win64_file) ? $win64_file : false;
+		$build->win64_file = file_exists("builds/" . $win64_file) ? $win64_file : false;
 
 		$linux_file = "{$chan}-i686-{$build->version}.tar.bz2";
-		$build->linux_file = file_exists($linux_file) ? $linux_file : false;
+		$build->linux_file = file_exists("builds/" . $linux_file) ? $linux_file : false;
 
 		$linux64_file = "{$chan}-x86_64-{$build->version}.tar.bz2";
-		$build->linux64_file = file_exists($linux64_file) ? $linux64_file : false;
+		$build->linux64_file = file_exists("builds/" . $linux64_file) ? $linux64_file : false;
 
 		$osx_file = "{$chan}_" . str_replace(".", "_", $build->version) . ".dmg";
-		$build->osx_file = file_exists($osx_file) ? $osx_file : false;
+		$build->osx_file = file_exists("builds/" . $osx_file) ? $osx_file : false;
 
 		$builds[] = $build;
 	}

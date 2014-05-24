@@ -35,9 +35,8 @@ div {
 #header {
     margin-bottom: 10px;
     width: 100%;
-    height: 144px;
-    background: url(images/singularity_logo.gif) left top no-repeat;
-    border-bottom: solid 2px black;
+    height: 100px;
+    background: url(images/replex_viewer.png) left top no-repeat;
 }
 
 .container {

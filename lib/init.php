@@ -20,7 +20,7 @@ function __autoload($class)
  * Example: http://www.example.com/applications/app1/
  */
 
-define('REL_DIR', 'singularity');
+define('REL_DIR', 'alpha');
 
 if (!defined('URL_ROOT')) {
 	$init_port = "";
@@ -56,12 +56,12 @@ if (!defined('IMG_ROOT')) {
 
 
 // $CHANS = array("SingularityAlpha" => "HEAD", "SingularityMultiWearable" => "refs/remotes/shyotl/V2MultiWear");
-$CHANS = array("SingularityAlpha" => "HEAD");
-define("KEEP_BUILDS", 50);
+$CHANS = array("ReplexAlpha" => "HEAD");
+define("KEEP_BUILDS", 50000);
 
 $DB = new DBH();
 
-$DB_NAME = SITE_ROOT . '/lib/singularity_revisions.db';
+$DB_NAME = SITE_ROOT . '/lib/replex_revisions.db';
 /* $DB_USER = 'gigaprims';
    $DB_PASS = 'secrit';
    $DB_HOST = 'localhost';

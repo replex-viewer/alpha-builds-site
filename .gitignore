@@ -6,4 +6,5 @@
 *~
 *.log
 lib/source/*
-lib/singularity_revisions*
+lib/replex_revisions*
+builds/*
