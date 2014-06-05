@@ -115,35 +115,35 @@ Function print_build($current, $next, $buildNr, $chan)
 		  <th>";
 
 	if ($current->file) {
-		print "<a href='" . URL_ROOT . "/" . $current->file . "'><img src=\"" . IMG_ROOT . "/dl.gif\" alt=\"Download Windows Build\"/>&nbsp;Windows</a>&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='dimmer' href='" . URL_ROOT . "/" . $current->file . ".log'>Build Log</a>";
+		print "<a href='" . URL_ROOT . "/builds/" . $current->file . "'><img src=\"" . IMG_ROOT . "/dl.gif\" alt=\"Download Windows Build\"/>&nbsp;Windows</a>&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='dimmer' href='" . URL_ROOT . "/builds/" . $current->file . ".log'>Build Log</a>";
 	}
 
 	if ($current->win64_file) {
-		print "<br/><a href='" . URL_ROOT . "/" . $current->win64_file . "'><img src=\"" . IMG_ROOT . "/dl.gif\" alt=\"Download Windows 64 Build\"/>&nbsp;Windows (64 bit)</a>
-             &thinsp;<a class='dimmer' href='" . URL_ROOT . "/" . $current->win64_file . ".log'>Build Log</a>";
+		print "<br/><a href='" . URL_ROOT . "/builds/" . $current->win64_file . "'><img src=\"" . IMG_ROOT . "/dl.gif\" alt=\"Download Windows 64 Build\"/>&nbsp;Windows (64 bit)</a>
+             &thinsp;<a class='dimmer' href='" . URL_ROOT . "/builds/" . $current->win64_file . ".log'>Build Log</a>";
 	}
 
 	if ($current->linux_file) {
-		print "<br/><a href='" . URL_ROOT . "/" . $current->linux_file . "'><img src=\"" . IMG_ROOT . "/dl.gif\" alt=\"Download Linux Build (32 bit)\"/>&nbsp;Linux (32 bit)</a>";
-		if (file_exists($current->linux_file . ".log")) {
-			print "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='dimmer' href='" . URL_ROOT . "/" . $current->linux_file . ".log'>Build Log</a>";
+		print "<br/><a href='" . URL_ROOT . "/builds/" . $current->linux_file . "'><img src=\"" . IMG_ROOT . "/dl.gif\" alt=\"Download Linux Build (32 bit)\"/>&nbsp;Linux (32 bit)</a>";
+		if (file_exists("builds/" . $current->linux_file . ".log")) {
+			print "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='dimmer' href='" . URL_ROOT . "/builds/" . $current->linux_file . ".log'>Build Log</a>";
 		}
 
 	}
 
 
 	if ($current->linux64_file) {
-		print "<br/><a href='" . URL_ROOT . "/" . $current->linux64_file . "'><img src=\"" . IMG_ROOT . "/dl.gif\" alt=\"Download Linux Build (64 bit)\"/>&nbsp;Linux (64 bit)</a>";
-		if (file_exists($current->linux64_file . ".log")) {
-			print "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='dimmer' href='" . URL_ROOT . "/" . $current->linux64_file . ".log'>Build Log</a>";
+		print "<br/><a href='" . URL_ROOT . "/builds/" . $current->linux64_file . "'><img src=\"" . IMG_ROOT . "/dl.gif\" alt=\"Download Linux Build (64 bit)\"/>&nbsp;Linux (64 bit)</a>";
+		if (file_exists("builds/" . $current->linux64_file . ".log")) {
+			print "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='dimmer' href='" . URL_ROOT . "/builds/" . $current->linux64_file . ".log'>Build Log</a>";
 		}
 	}
 
 	if ($current->osx_file) {
-		print "<br/><a href='" . URL_ROOT . "/" . $current->osx_file . "'><img src=\"" . IMG_ROOT . "/dl.gif\" alt=\"Download Mac OS X Build\"/>&nbsp;Mac OS X</a>";
-		if (file_exists($current->osx_file . ".log")) {
-			print "&thinsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='dimmer' href='" . URL_ROOT . "/" . $current->osx_file . ".log'>Build Log</a>";
+		print "<br/><a href='" . URL_ROOT . "/builds/" . $current->osx_file . "'><img src=\"" . IMG_ROOT . "/dl.gif\" alt=\"Download Mac OS X Build\"/>&nbsp;Mac OS X</a>";
+		if (file_exists("builds/" . $current->osx_file . ".log")) {
+			print "&thinsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a class='dimmer' href='" . URL_ROOT . "/builds/" . $current->osx_file . ".log'>Build Log</a>";
 		}
 	}
 

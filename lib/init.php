@@ -20,7 +20,14 @@ function __autoload($class)
  * Example: http://www.example.com/applications/app1/
  */
 
-define('REL_DIR', 'alpha');
+if ($_SERVER["HTTP_HOST"] == "files.streamgrid.net")
+{
+	define('REL_DIR', 'replex');
+}
+else
+{
+	define('REL_DIR', 'alpha');
+}
 
 if (!defined('URL_ROOT')) {
 	$init_port = "";
